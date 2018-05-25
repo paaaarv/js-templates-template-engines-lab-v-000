@@ -11,6 +11,10 @@ function createPost(){
 
   var templatePageFn = _.template(pageTemplate)
 
+  var mainDiv = document.getElementsByTagName("main");
+  mainDiv.innerHTML+= templatePageFn
+
+
   var templateFn = _.template(postTemplate);
 
   var commentFn= _.template(commentsTemplate);
@@ -18,7 +22,9 @@ function createPost(){
 
   var templateHTML = templateFn({ 'pTitle': postTitle, 'pBody': postBody, 'pAuthor': postAuthor});
 
-  posts = document.getElementById("posts");
+
+
+  posts = document.getElementById("post");
 
   posts += templateHTML
   posts += commentFn
