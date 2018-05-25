@@ -36,15 +36,17 @@
 
     <script id="post-template" type="text/x-lodash-template">
       <article>
-        <header id='postTitle'> <%- pTitle%> </header>
-        <p id= 'postBody'> <%- pBody%> </p>
-        <footer id='postAuthor'> <%- pAuthor%></footer>
+        <header id='pTitle'> <%- pTitle%> </header>
+        <p id= 'pBody'> <%- pBody%> </p>
+        <footer id='pAuthor'> <%- pAuthor%></footer>
       </article>
     </script>
+
+
     <script id="comments-template" type="text/x-lodash-template">
       <form onsubmit="postComment();">
-        Name <input type = "text" name = "commenterName">
-        Body: <input type = "text" name = "commentBody">
+        Name <input type = "text" id= "commenterName">
+        Body: <input type = "text" id= "commentText">
         <input type = "submit">
       </form>
       <div id="comments">
