@@ -27,9 +27,17 @@ function createPost(){
   posts = document.getElementById("post");
 
   posts += templateHTML
-  posts += commentFn
+  posts += commentFn()
 
-  console.log(posts)
+
+
+
+  mainDiv = document.getElementsByTagName("main")[0];
+
+  mainDiv+=posts
+
+  console.log(mainDiv)
+
 
 
 }
@@ -45,7 +53,7 @@ function postComment() {
 
   var commentsDiv= document.getElementById("comments");
 
-  var templateHTML = templateFn({ 'comment': comment, 'commenter': commenter });
+  var commentHTML = commentFn({ 'comment': comment, 'commenter': commenter });
 
   commentsDiv+=templateHTML
 
