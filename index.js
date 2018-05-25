@@ -11,8 +11,8 @@ function createPost(){
 
   var templatePageFn = _.template(pageTemplate)
 
-  var mainDiv = document.getElementsByTagName("main");
-  mainDiv.innerHTML+= templatePageFn
+  mainDiv = document.getElementsByTagName("main")[0].innerHTML;
+  mainDiv+= templatePageFn()
 
 
   var templateFn = _.template(postTemplate);
@@ -26,17 +26,13 @@ function createPost(){
 
   posts = document.getElementById("post");
 
+
   posts += templateHTML
   posts += commentFn()
 
 
-
-
-  mainDiv = document.getElementsByTagName("main")[0];
-
-  mainDiv+=posts
-
   console.log(mainDiv)
+
 
 
 
